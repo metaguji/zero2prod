@@ -1,0 +1,3 @@
+## Description
+
+This exercise is based on [Zero To Production in Rust](https://www.amazon.com/Zero-Production-Rust-introduction-development/dp/B0BHLDMFDQ/ref=sr_1_1?crid=3728IKVT8DMKS&dib=eyJ2IjoiMSJ9.gFRfez2w4_0uo2plmGph3dxKfW-t_KSsNImykDa6YaTLBZitqTU7SaHBc195_idVPUQiRLnQBoP2Kbat5-Xxlm8wzfmqnatENXQ26rpLyRUa8BZKGcGoHJ5N5wJiuaxQ-kUWUf-G7zG-e4HUYL0RGFbSF3Labz0TmC_vdyLbB-eZrLLWQOnGQoFzI2qX2uOkVTbMysqjJpO64ErGMoyNc-3FGY3j93BccHpBfS0_lA8.a-xY-IYg33icsmLl9yv4T0PDbfgzL0CCJGlmLkAsOWM&dib_tag=se&keywords=zero+to+to+production+in+rust&qid=1729756722&sprefix=zero+to+to+production+in+rus%2Caps%2C633&sr=8-1), an introduction to backend development in rust.
