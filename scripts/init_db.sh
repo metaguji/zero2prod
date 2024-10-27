@@ -18,13 +18,13 @@ APP_DB_NAME="${APP_DB_NAME:=newsletter}"
 if [[ -z "${SKIP_DOCKER}" ]]
 then
     CONTAINER_NAME="postgres"
-    docker run \
-        --env POSTGRES_USER=${SUPERUSER} \
-        --env POSTGRES_PASSWORD=${SUPERUSER_PWD} \
-        --publish "${DB_PORT}":5432 \
-        --detach \
-        --name "${CONTAINER_NAME}" \
-        postgres -N 1000
+    # docker run \
+    #     --env POSTGRES_USER=${SUPERUSER} \
+    #     --env POSTGRES_PASSWORD=${SUPERUSER_PWD} \
+    #     --publish "${DB_PORT}":5432 \
+    #     --detach \
+    #     --name "${CONTAINER_NAME}" \
+    #     postgres -N 1000
 
     until [ \
         "$(docker inspect -f "{{.State.Status}}" ${CONTAINER_NAME})" == "running" \
@@ -33,11 +33,11 @@ then
         sleep 1
     done
 
-    CREATE_QUERY="CREATE USER ${APP_USER} WITH PASSWORD '${APP_USER_PWD}';"
-    docker exec -it "${CONTAINER_NAME}" psql -U "${SUPERUSER}" -c "${CREATE_QUERY}"
+    # CREATE_QUERY="CREATE USER ${APP_USER} WITH PASSWORD '${APP_USER_PWD}';"
+    # docker exec -it "${CONTAINER_NAME}" psql -U "${SUPERUSER}" -c "${CREATE_QUERY}"
 
-    GRANT_QUERY="ALTER USER ${APP_USER} CREATEDB;"
-    docker exec -it "${CONTAINER_NAME}" psql -U "${SUPERUSER}" -c "${GRANT_QUERY}"
+    # GRANT_QUERY="ALTER USER ${APP_USER} CREATEDB;"
+    # docker exec -it "${CONTAINER_NAME}" psql -U "${SUPERUSER}" -c "${GRANT_QUERY}"
 fi
 
 >&2 echo "Postgres is up and running on post ${DB_PORT}!"
